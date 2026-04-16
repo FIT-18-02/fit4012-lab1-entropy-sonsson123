@@ -14,7 +14,7 @@ Bài lab giúp sinh viên hiểu rõ khái niệm entropy và độ dư thừa t
 | Input | Entropy | Redundancy | Nhận xét |
 |---|---:|---:|---|
 | aaaa | 0 | 8 | Chuỗi lặp hoàn toàn, không có thông tin mới |
-| abcd | 20 | 6 | Các ký tự đều nhau, entropy trung bình |
+| abcd | 2 | 6 | Các ký tự đều nhau, entropy trung bình |
 | hello world | 2.845 | 5.155 | Có sự đa dạng ký tự, entropy cao hơn |
 
 ### 3.2 Modulo inverse
