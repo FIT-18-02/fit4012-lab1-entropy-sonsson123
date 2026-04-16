@@ -1,5 +1,4 @@
 #include <iostream>
-
 using namespace std;
 
 int gcd(int a, int b) {
@@ -17,8 +16,7 @@ int extended_euclid(int a, int b, int &x, int &y) {
         y = 0;
         return a;
     }
-
-    int x1 = 0, y1 = 0;
+    int x1, y1;
     int g = extended_euclid(b, a % b, x1, y1);
     x = y1;
     y = x1 - (a / b) * y1;
@@ -26,15 +24,16 @@ int extended_euclid(int a, int b, int &x, int &y) {
 }
 
 int mod_inverse(int a, int m) {
-    // TODO(student): implement modular inverse using extended_euclid()
-    // If inverse does not exist, return -1.
-    (void)a;
-    (void)m;
-    return -1;
+    int x, y;
+    int g = extended_euclid(a, m, x, y);
+    if (g != 1) {
+        return -1; // Không tồn tại nghịch đảo
+    }
+    return (x % m + m) % m; // Đảm bảo kết quả dương
 }
 
 int main() {
-    int a = 0, m = 0;
+    int a, m;
     cout << "Nhap a, m: ";
     cin >> a >> m;
 
